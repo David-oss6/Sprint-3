@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/grocery.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ShopNow</title>
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md bg-secondary sticky-top">
+
+    <a class="navbar-brand text-white" href="index.html"><span><i class="fas fa-shopping-cart mr-2"></i></span>
+      <span>Volver</span> </a>
+    <!-- Search BAR    -->
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn  btn-outline-light" type="submit">Search</button>
+    </form>
+
+    <!-- End SerchBar-->
+    <button class="navbar-toggler" type="button" onclick="printCart()" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white btn" id="cart" type="button" data-toggle="modal" data-target="#cartModal"
+            onclick="printCart()" href="#beauty"><i class="fas fa-cart-arrow-down"></i>
+            My Cart</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- navbar -->
+  <!-- Relative Start-->
+  <div class="position-relative">
+    <!-- Relative Start-->
+    <!-- <h1 class="text-center  mt-3 m-5">Welcome to the ShopNow</h1> -->
+    <!---Carousel  ----------------------------- -->
+
+
+    <div class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/arroz.jpg" class="d-block car w-100" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="images/aceite.jpg" class="d-block car w-100" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="images/allin.jpg" class="d-block car w-100" alt="">
+        </div>
+        <div class="carousel-item">
+          <img src="images/ensalada.jpg" class="d-block car w-100" alt="">
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <!--End Carrousel    ------------------------------->
+
+
+    <!-- Grocery part -->
+    <div class="container-fluid img-fondo">
+      <div class="grocery-cards">
+        <!-------empieza-->
+        <section>
+          <h2 class="text-center grocery-titulos"><i class="fas grocery-iconos fa-shopping-basket mr-2"></i>Grocery</h2>
+          <div id="grocery" class="row   ml-3 m-5">
+
+            <div class="card  col-sm-3 m-1 ml-5 p-4" style="width: 18rem; ">
+              <img src="./images/aceite2.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos  ">Cooking oil</h5>
+                <h5 class="card-text estilo-precios">$10.5</h5>
+                <button type="button" onclick="addToCart(1)" class="btn btn-sm btn-primary">Add to
+                  cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(1)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card  col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/pasta2.jpg" class="grocery-img">
+              <div class="card-body text-start">
+
+                <h5 class="card-title estilo-productos">Pasta</h5>
+                <h5 class="card-text estilo-precios ">$6.25</h5>
+                <button type="button" onclick="addToCart(2)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(2)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+
+              </div>
+            </div>
+
+            <div class="card  col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/pastel2.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Instant cupcake mixture</h5>
+                <h5 class="card-text estilo-precios">$5</h5>
+                <button type="button" onclick="addToCart(3)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(3)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- SEGUNDO Grocery   -------------------->
+        <section>
+
+          <div id="grocery" class="row ml-3 m-5">
+
+            <div class="card color-fondo rounded col-sm-3 m-1 ml-5 p-4" style="width: 18rem; ">
+              <img src="./images/aceite2.jpg" class="grocery-img">
+              <div class="card-body bg text-start">
+                <h5 class="card-title estilo-productos">Cooking oil</h5>
+                <h5 class="card-text estilo-precios">$10.5</h5>
+                <button type="button" onclick="addToCart(1)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(1)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card  col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/pasta2.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Pasta</h5>
+                <h5 class="card-text estilo-precios ">$6.25</h5>
+                <button type="button" onclick="addToCart(2)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(2)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/pastel2.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Instant cupcake mixture</h5>
+                <h5 class="card-text estilo-precios">$5</h5>
+                <button type="button" onclick="addToCart(3)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(3)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <img src="images/separadorbeauty.jpg" class="w-100 separador" alt="">
+
+
+        <!-- beauty part -->
+        <section>
+          <h2 class="text-center grocery-titulos"><i class="fas grocery-iconos fa-heart mr-2"></i>Beauty</h2>
+          <div id="beauty" class="row ml-3 m-5">
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/allin.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">All-in-1</h5>
+                <h5 class="card-text estilo-precios">$260</h5>
+                <button type="button" onclick="addToCart(4)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(4)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/zero.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Zero makeup kit</h5>
+                <h5 class="card-text estilo-precios">$20.5</h5>
+                <button type="button" onclick="addToCart(5)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(5)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/lips.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Lip tints</h5>
+                <h5 class="card-text estilo-precios">$12.75</h5>
+                <button type="button" onclick="addToCart(6)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(6)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SEGUNDO Clothes ---------------------------->
+
+        <section>
+
+          <div id="beauty" class="row ml-3 m-5">
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/allin.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">All-in-1</h5>
+                <h5 class="card-text estilo-precios">$260</h5>
+                <button type="button" onclick="addToCart(4)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(4)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/zero.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Zero makeup kit</h5>
+                <h5 class="card-text estilo-precios">$20.5</h5>
+                <button type="button" onclick="addToCart(5)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(5)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/lips.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Lip tints</h5>
+                <h5 class="card-text estilo-precios">$12.75</h5>
+                <button type="button" onclick="addToCart(6)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(6)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- clothes part -->
+        <img src="images/separadorClothes.jpg" class="w-100 separador" alt="">
+        <section>
+          <h2 class="text-center grocery-titulos"><i class="fas grocery-iconos fa-tshirt mr-2"></i>Clothes</h2>
+          <div id="clothes" class="row  ml-3 m-5">
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/dress.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Lawn dress</h5>
+                <h5 class="card-text estilo-precios">$15</h5>
+                <button type="button" onclick="addToCart(7)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(7)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/combo.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Lawn-chiffon combo</h5>
+                <h5 class="card-text estilo-precios">$19.99</h5>
+                <button type="button" onclick="addToCart(8)" class="btn  btn-sm btn-primary">Add to
+                  cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(8)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/frok.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Toddler Frock</h5>
+                <h5 class="card-text estilo-precios">$9.99</h5>
+                <button type="button" onclick="addToCart(9)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(9)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <!-- SEGUNDO clothes -------------------->
+        <section>
+
+          <div id="clothes" class="row  ml-3 m-5">
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/dress.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Lawn dress</h5>
+                <h5 class="card-text estilo-precios">$15</h5>
+                <button type="button" onclick="addToCart(7)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(7)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/combo.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Lawn-chiffon combo</h5>
+                <h5 class="card-text estilo-precios">$19.99</h5>
+                <button type="button" onclick="addToCart(8)" class="btn  btn-sm btn-primary">Add to
+                  cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(8)" class="btn btn-sm btn-secondary">Remove from
+                  cart </button>
+              </div>
+            </div>
+
+            <div class="card col-sm-3 m-1 ml-5 p-4" style="width: 18rem;">
+              <img src="./images/frok.jpg" class="grocery-img">
+              <div class="card-body text-start">
+                <h5 class="card-title estilo-productos">Toddler Frock</h5>
+                <h5 class="card-text estilo-precios">$9.99</h5>
+                <button type="button" onclick="addToCart(9)" class="btn btn-sm btn-primary">Add to cart</button>
+                <hr>
+                <button type="button" onclick="removeFromCart(9)" class="btn btn-sm btn-secondary">Remove from
+                  cart</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+      <!--ACABA-->
+    </div>
+    <!--Relative End-->
+  </div>
+  <!--Relative End-->
+  <!-- modal -->
+  <aside>
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalScrollableTitle"><i class="fas fa-cart-arrow-down"></i>My Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- listing items starts -->
+            <div>
+              <ul class="list">
+
+              </ul>
+              <div>
+                <h3 class="text-center bill px-5">Select Something</h3>
+              </div>
+              <div class="text-center">
+                <a href="checkout.html" class="btn btn-primary m-3">Checkout</a>
+              </div>
+            </div>
+            <!-- listing items ends -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- script tags -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+  <script src="js/grocery.js"></script>
+</body>
+
+</html>
