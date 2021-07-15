@@ -111,10 +111,6 @@ function calculateSubtotals() {
     subtotal.grocery.value = subtotalGrocery;
     subtotal.clothes.value = subtotalClothes;
 
-
-
-
-
 }
 
 // Exercise 4
@@ -151,7 +147,7 @@ function applyPromotionsSubtotals() {
         }
         subtotal.grocery.discount = discount1 + discount2;
     }
-
+    console.log(subtotal.grocery.discount)
 
 }
 //Exercise 6
@@ -179,7 +175,7 @@ function generateCart() {
 
         }
     }
-
+    console.log(cartList)
 }
 
 // Exercise 7
@@ -194,6 +190,7 @@ function applyPromotionsCart() {
             if (a > 3) {
                 discount = (product.price * product.quantity) - (0.5 * a)
                 product.subtotalWithDiscount = discount;
+                console.log(product.subtotalWithDiscount)
             }
         }
         else if (promotion == 'Instant cupcake mixture') {
@@ -201,6 +198,7 @@ function applyPromotionsCart() {
             if (a > 10) {
                 discount = (product.price * product.quantity) - parseInt(a * ((5 / 3) * 2))
                 product.subtotalWithDiscount = discount;
+                console.log(product.subtotalWithDiscount)
             }
         }
     }
@@ -243,7 +241,7 @@ function addToCart(id) {
     applyPromotionsCart()
     applyPromotionsSubtotals()
     calculateTotal()
-
+    console.log(cart)
 }
 
 // Exercise 9
@@ -266,6 +264,7 @@ function removeFromCart(id) {
             }
         }
     }
+    console.log(cart)
 }
 
 
