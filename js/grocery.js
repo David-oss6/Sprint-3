@@ -71,15 +71,14 @@ function addToCartList(id) {
     // 2. Add found product to the cartList array
 
     cartList.push(products.indexOf(id - 1))
-
-
-
+    console.log(cartList)
 
 }
 
 // Exercise 2
 function cleanCart() {
     cartList = [];
+    console.log(cart)
 }
 
 // Exercise 3
@@ -110,6 +109,9 @@ function calculateSubtotals() {
     subtotal.beauty.value = subtotalBeauty;
     subtotal.grocery.value = subtotalGrocery;
     subtotal.clothes.value = subtotalClothes;
+    console.log(subtotalBeauty)
+    console.log(subtotalGrocery)
+    console.log(subtotalClothes)
 
 }
 
@@ -120,6 +122,7 @@ function calculateTotal() {
     let valorFinal = (subtotal.grocery.value + subtotal.beauty.value + subtotal.clothes.value) - (subtotal.grocery.discount + subtotal.beauty.discount + subtotal.clothes.discount)
 
     total = valorFinal
+    console.log(total)
 
 
 }
@@ -200,6 +203,9 @@ function applyPromotionsCart() {
                 product.subtotalWithDiscount = discount;
                 console.log(product.subtotalWithDiscount)
             }
+        }
+        else if ((promotion != 'Instant cupcake mixture') && (promotion != 'cooking oil')) {
+            console.log("No aplica")
         }
     }
 
