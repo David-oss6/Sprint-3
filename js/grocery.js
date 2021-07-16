@@ -78,7 +78,7 @@ function addToCartList(id) {
 // Exercise 2
 function cleanCart() {
     cartList = [];
-    console.log(cart)
+    console.log("Arry limpio: " + cart)
 }
 
 // Exercise 3
@@ -109,9 +109,9 @@ function calculateSubtotals() {
     subtotal.beauty.value = subtotalBeauty;
     subtotal.grocery.value = subtotalGrocery;
     subtotal.clothes.value = subtotalClothes;
-    console.log(subtotalBeauty)
-    console.log(subtotalGrocery)
-    console.log(subtotalClothes)
+    console.log("subtotalBeauty es: " + subtotalBeauty)
+    console.log("subtotalGrocery es: " + subtotalGrocery)
+    console.log("subtotalClothes es: " + subtotalClothes)
 
 }
 
@@ -122,7 +122,7 @@ function calculateTotal() {
     let valorFinal = (subtotal.grocery.value + subtotal.beauty.value + subtotal.clothes.value) - (subtotal.grocery.discount + subtotal.beauty.discount + subtotal.clothes.discount)
 
     total = valorFinal
-    console.log(total)
+    console.log("El valor total es: " + " " + total)
 
 
 }
@@ -193,7 +193,7 @@ function applyPromotionsCart() {
             if (a > 3) {
                 discount = (product.price * product.quantity) - (0.5 * a)
                 product.subtotalWithDiscount = discount;
-                console.log(product.subtotalWithDiscount)
+                console.log("cooking oil subtotal con discount: " + product.subtotalWithDiscount)
             }
         }
         else if (promotion == 'Instant cupcake mixture') {
@@ -201,7 +201,7 @@ function applyPromotionsCart() {
             if (a > 10) {
                 discount = (product.price * product.quantity) - parseInt(a * ((5 / 3) * 2))
                 product.subtotalWithDiscount = discount;
-                console.log(product.subtotalWithDiscount)
+                console.log("Instant cupckake subtotal con discount: " + product.subtotalWithDiscount)
             }
         }
         else if ((promotion != 'Instant cupcake mixture') && (promotion != 'cooking oil')) {
@@ -247,7 +247,7 @@ function addToCart(id) {
     applyPromotionsCart()
     applyPromotionsSubtotals()
     calculateTotal()
-    console.log(cart)
+    console.log("Ver My Cart")
 }
 
 // Exercise 9
@@ -270,7 +270,7 @@ function removeFromCart(id) {
             }
         }
     }
-    console.log(cart)
+    console.log("Carrito - producto: " + cart)
 }
 
 
